@@ -8,6 +8,7 @@ function closeModal() {
 	})
 };
 
+
 const modals = () => {
 	let btnPressed;
 	function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false) {

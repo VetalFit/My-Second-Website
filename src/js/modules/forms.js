@@ -1,5 +1,6 @@
 //import checkNumInputs from "./checkNumInputs";
 import { closeModal } from "./modals";
+import { postData } from "../services/requests";
 
 const forms = () => {
 	const form = document.querySelectorAll('form'),
@@ -20,15 +21,6 @@ const forms = () => {
 	const path = {
 		designer: 'assets/server.php',
 		question: 'assets/question.php'
-	};
-
-	const postData = async (url, data) => {
-		let res = await fetch(url, {
-			method: 'POST',
-			body: data
-		});
-
-		return await res.text();
 	};
 
 	const clearInputs = () => {
@@ -94,7 +86,7 @@ const forms = () => {
 						item.style.display = 'block';
 						item.classList.remove('fadeOutUp');
 						item.classList.add('fadeInUp');
-						//closeModal();
+						closeModal();
 					}, 4000);
 				});
 		});
